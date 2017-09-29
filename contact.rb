@@ -15,8 +15,7 @@ class Contact
 
   end
 
-  # This method should call the initializer,
-  # store the newly created contact, and then return it
+
 
   def first_name
     @first_name
@@ -84,7 +83,11 @@ end
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update
+  def update(contact, attribute, new_value)
+
+    #come bck to this 
+
+
 
   end
 
@@ -137,6 +140,20 @@ end
 
   # This method should delete all of the contacts
   def self.delete_all
+    delete_all = []
+
+    @@contacts.each do |contact|
+      delete_all << contact
+    end
+
+    delete_all.each do |tbd|
+      @@contacts.delete(tbd)
+
+
+    end
+
+  p @@contacts
+
 
   end
 
@@ -173,6 +190,11 @@ puts "*********"
 
 puts Contact.find_by("first_name", "Meera")
 puts Contact.find_by("email", "weird")
+
+
+puts "%%%%%%%"
+
+puts Contact.delete_all
 
 
 
