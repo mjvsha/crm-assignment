@@ -16,6 +16,13 @@ class Contact
   end
 
 
+def first_name_update=(first_name)
+  @first_name = first_name
+end
+
+def last_name_update=(last_name)
+  @last_name = last_name
+end
 
   def first_name
     @first_name
@@ -24,6 +31,11 @@ class Contact
   def last_name
     @last_name
   end
+
+def email_update=(email)
+  @email = email
+
+end
 
 
   def email
@@ -37,7 +49,7 @@ def note
 end
 
 
-  def notes=(note)
+  def note_update=(note)
     @note = note
   end
 
@@ -74,7 +86,7 @@ end
 
     @@contacts.each do |contact|
       if contact.contact_id == id
-        puts "The contact you have selected is: #{contact.full_name}"
+        return contact
       end
     end
   end
@@ -83,10 +95,20 @@ end
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update(contact, attribute, new_value)
+  def update(attribute, new_value)
 
-    #come bck to this 
+    if attribute == "first name"
+      self.first_name_update=(new_value)
 
+    elsif attribute == "last name"
+      self.last_name_update=(new_value)
+
+    elsif attribute == "email"
+      self.email_update=(new_value)
+
+    elsif attribute == "note"
+      self.note_update=(new_value)
+    end
 
 
   end
@@ -172,7 +194,7 @@ end
 
   # Feel free to add other methods here, if you need them.
 
-
+=begin
 puts meera = Contact.create("Meera","Sharma", "coolemail", "cool")
 puts meera.inspect
 
@@ -196,7 +218,7 @@ puts "%%%%%%%"
 
 puts Contact.delete_all
 
-
+=end
 
 =begin
 
