@@ -113,47 +113,58 @@ end
 
   end
 
+
   # This method should work similarly to the find method above
   # but it should allow you to search for a contact using attributes other than id
   # by specifying both the name of the attribute and the value
   # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
   def self.find_by(attrib, value)
 
-  case attrib
+  @@contacts.each do |contact|
 
-  when "first_name"
+    #well DAMN.....look at how much i repeat myself......
 
-      @@contacts.each do |contact|
+
         if value == contact.first_name
-          puts "Contacts with this first name: #{contact.contact_id} #{contact.full_name}"
-          contact
+          puts "Contact ID: #{contact.contact_id}"
+          puts "Contact first name: #{contact.first_name}"
+          puts "Contact last name: #{contact.last_name}"
+          puts "Contact email: #{contact.email}"
+
         end
-      end
 
-    when "last_name"
-    @@contacts.each do |contact|
+
       if value == contact.last_name
-        puts "Contacts with this last name: #{contact.contact_id} #{contact.full_name}"
-        contact
-      end
-    end
+        puts "Contact ID: #{contact.contact_id}"
+        puts "Contact first name: #{contact.first_name}"
+        puts "Contact last name: #{contact.last_name}"
+        puts "Contact email: #{contact.email}"
 
-    when "email"
-    @@contacts.each do |contact|
+      end
+
+
+
+
       if value == contact.email
-        puts "Contacts with this address: #{contact.contact_id} #{contact.full_name}"
-        contact
-      end
-    end
-    when "note"
-    @@contacts.each do |contact|
-      if value == contact.note
-        puts "Contacts with this email: #{contact.contact_id} #{contact.full_name}"
-        contact
+        puts "Contact ID: #{contact.contact_id}"
+        puts "Contact first name: #{contact.first_name}"
+        puts "Contact last name: #{contact.last_name}"
+        puts "Contact email: #{contact.email}"
+
       end
 
-    end
-  end
+
+
+      if value == contact.note
+        puts "Contact ID: #{contact.contact_id}"
+        puts "Contact first name: #{contact.first_name}"
+        puts "Contact last name: #{contact.last_name}"
+        puts "Contact email: #{contact.email}"
+
+      end
+
+
+end
 
 end
 
@@ -180,7 +191,7 @@ end
   end
 
   def full_name
-    "#{@first_name} #{@last_name}"
+
 
   end
 

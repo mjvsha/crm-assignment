@@ -95,18 +95,44 @@ end
 
         contact_to_modify.update(attribute, new_value)
 
-
     end
 
   def delete_contact()
-    
+    puts "What is the id of the person you want to delete?"
+
+      to_delete = Contact.find(id)
+
+      @@contacts.delete(to_delete)
+
+
   end
 
   def display_all_contacts
-
+    Contact.all.each do |contact|
+      puts "Contact ID: #{contact.contact_id}"
+      puts "Contact First Name: #{contact.first_name}"
+      puts "Contact Last Name: #{contact.last_name}"
+      puts "Contact email: #{contact.email}"
+    end
   end
 
   def search_by_attribute
+    puts "Please enter your search criteria"
+    puts "first name"
+    puts "last name"
+    puts "email"
+    puts "note"
+
+    attrib = gets.chomp.strip
+
+    puts "Please enter the #{attrib} to search by"
+    value = gets.chomp.strip
+
+
+     Contact.find_by(attrib, value)
+
+
+
 
   end
 
@@ -140,3 +166,4 @@ puts Contact.all
 
 
 puts mycrm.main_menu
+puts mycrm.display_all_contacts
