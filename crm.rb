@@ -46,7 +46,7 @@ class CRM
   when 5
     search_by_attribute
   when 6
-    return
+    abort("Goodbye, loser!")
 
 end
 
@@ -115,6 +115,7 @@ end
       puts "Contact First Name: #{contact.first_name}"
       puts "Contact Last Name: #{contact.last_name}"
       puts "Contact email: #{contact.email}"
+      puts "Contact note: #{contact.note}"
     end
   end
 
@@ -141,23 +142,6 @@ end
 
 end
 
-
-=begin
-
-
-puts "Who do you want to modify?"
-user_input = gets.chomp.strip
-modify_contact = []
-  @@contacts.each do |contact|
-    if user_input == contact
-      modify_contact << contact
-    end
-
-  puts "What do you want to modify?"
-  user_what = gets.chomp.strip
-  modify_contact.each do |contact|
-    contact.
-=end
 
 
 puts mycrm = CRM.new("Bingo")
