@@ -98,11 +98,13 @@ end
     end
 
   def delete_contact()
-    puts "What is the id of the person you want to delete?"
+      puts "What is the id of the person you want to delete?"
 
-      to_delete = Contact.find(id)
+      id = gets.chomp.strip.to_i
 
-      @@contacts.delete(to_delete)
+      Contact.delete(id)
+
+
 
 
   end

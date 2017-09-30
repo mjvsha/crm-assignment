@@ -125,13 +125,13 @@ end
     #well DAMN.....look at how much i repeat myself......
 
 
-        if value == contact.first_name
+      if value == contact.first_name
           puts "Contact ID: #{contact.contact_id}"
           puts "Contact first name: #{contact.first_name}"
           puts "Contact last name: #{contact.last_name}"
           puts "Contact email: #{contact.email}"
 
-        end
+      end
 
 
       if value == contact.last_name
@@ -164,7 +164,7 @@ end
       end
 
 
-end
+    end
 
 end
 
@@ -197,8 +197,12 @@ end
 
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
-  def delete
+  def self.delete(id)
+    to_delete = Contact.find(id) #find the id of the contact to be deleted, return contact
 
+    @@contacts.delete(to_delete)
+
+    @@contacts
   end
 
 end
